@@ -44,8 +44,8 @@ def location_flat():
 
 
 def location_bus_stop():
-    print_pause("Now that you have your keys, you can head to CodeCool.\n
-     "On your way to to bus stop you relaize that you don't have travel pass nor face mask.")
+    print_pause("Now that you have your keys, you can head to CodeCool.")
+    print_pause("On your way to to bus stop you relaize that you don't have travel pass nor face mask.")
     print_pause("But your attention suddely shifts to a busker across the street,  the tone feels similar to you.")
     print_pause("You see that there is some case in his basket")
     print_pause("What do you do?")
