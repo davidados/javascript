@@ -3,8 +3,6 @@ import sys
 import random
 
 item = ""
-equipped_item = ""
-items = ["key", "ticket"]
 
 
 
@@ -31,16 +29,40 @@ def location_flat():
     print_pause("It's morning, you already showered and dressed up for the departure,")
     print_pause("although you dont find your keys.")
     print_pause("What do you do?")
-    print_pause("A.) Lay back, and tell Codecool that you are sick.")
-    print_pause("B.) Start looking for your keys")
-    print_pause("Please press A or B")
-    #input here
+    print_pause("1.) Lay back, and tell Codecool that you are sick.")
+    print_pause("2.) Start looking for your keys")
+    print_pause("Please press \"1\" or \"2\"")
+    response_flat()
     print_pause("Where would you look for it?") 
-    print_pause("A.) Desk.")
-    print_pause("B.) Bed")
-    print_pause("C.) Drawer")
-    print_pause("D.) Holder")
-    #input here
+    print_pause("1.) Desk.")
+    print_pause("2.) Bed")
+    print_pause("3.) Drawer")
+    print_pause("4.) Holder")
+    response_flat2()
+
+
+def response_flat():
+    response = input()
+    if response == "1":
+        print_pause("You told Codecool that you are sick, you still feel hot, and with no internet, you wasted a day of your life. :(")
+        game_over()
+    elif response == "2":
+        print_pause("I knew you wouldn't give up this easy.")
+    else:
+        response_flat()
+
+def response_flat2():
+    key_location = random.randint(1, 4)
+    response = input()
+    if key_location == int(response):
+        print_pause("You have found your keys")
+        item.append("keys")
+        else:
+                print("There is no key")
+        else:
+            room1_response()
+   
+
 
 
 def location_bus_stop():
@@ -49,29 +71,55 @@ def location_bus_stop():
     print_pause("But your attention suddely shifts to a busker across the street,  the tone feels similar to you.")
     print_pause("You see that there is some case in his basket")
     print_pause("What do you do?")
-    print_pause("A.) Try to take some cash")
-    #Random észreveszi vagy nem
-	#game_over(), ha észreveszi
-    print_pause("B.) Just enjoy the music for a couple of moments.")
-    print_pause("C.) Continue your journey to the bus stop.")
-    #input here
+    print_pause("1.) Try to take some cash")
+    print_pause("2.) Just enjoy the music for a couple of moments.")
+    print_pause("3.) Continue your journey to the bus stop.")
+    response_bus_stop1()
     print_pause("You see that the bus is coming fast, you start run for it, you catch it.")
     print_pause("If you have some cash, you can buy ticket from the driver, otherwise you risk it to get caught by the ticket inspector.")
     print_pause("What is your next step?")
-    print_pause("A.) You change your mind and won't step into the bus.")
-    #game_over(),
-    print_pause("B.) Risk it to travel without ticket.")
+    print_pause("1.) You change your mind and won't step into the bus.")
+
+    print_pause("2.) Risk it to travel without ticket.")
     #Random észreveszi vagy nem
-    print_pause("C.) Buy ticket from the driver")
-		
+    print_pause("3.) Buy ticket from the driver")
+    response_bus_stop2()
+
+def commit_crime():
+    crime_chances = random.randint(1, 2)
+        if crime_chances == "1":
+            print_pause("You succesfully get away with this sin.")
+        else:
+            print_pause("You got caught!")
+            game_over()
+            quit()
+
+
+def response_bus_stop1():
+    response = input()
+    if response == "1":
+        commit_crime()
+        item.append("cash")
+    elif response == "2":
+        print_pause("You know what is this right? Gyongyhaju lany...")
+    elif response == "3":
+        print_pause("You are really determined!")
+    else:
+        response_bus_stop1()
+
+def response_bus_stop2():
+    if response == "1":
+        print_pause("You should have had give up now, you were doing great!")
+        game_over()
+
 
 def location_codecool():
     print_pause("You successfully arrived to Codecool's headquarter, but due to the absent of your mask the receptionist can't let you pass.")
     print_pause("Now what to do?")
-    print_pause("A.) Check the bin for possible used masks.")
-    print_pause("B.) Head back to home.")
+    print_pause("1.) Check the bin for possible used masks.")
+    print_pause("2.) Head back to home.")
     #game_over(),
-    print_pause("C.) You don't care what does the receptionist says, you just go on straight.")
+    print_pause("3.) You don't care what does the receptionist says, you just go on straight.")
     #input here
 # A response: Találtál egy maszkot a kuka mögött
 # B response: Nem mehetsz haza, megsülsz az utcán, olyan meleg van
