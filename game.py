@@ -27,9 +27,16 @@ def location_flat():
     print_pause("It's morning, you already showered and dressed up for the departure, \n
     "although you dont find your keys." )
     print_pause("What do you do?
-    print_pause("A.) Lay back, and tell Coodcool that you are sick.)
+    print_pause("A.) Lay back, and tell Coodcool that you are sick.")
     print_pause("B.) Start looking for your keys")
     print_pause("Please press A or B")
+    #input here
+    print_pause("Where would you look for it?") 
+    print_pause("A.) Desk.")
+    print_pause("B.) Bed")
+    print_pause("C.) Drawer")
+    print_pause("D.) Holder")
+    #input here
 
 
 
