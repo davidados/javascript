@@ -99,4 +99,9 @@ def location_office():
 def main():
     intro()
     location_flat()
+    location_bus_stop()
+    location_codecool()
     game_finished()
+
+
+main()
