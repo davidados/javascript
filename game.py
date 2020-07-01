@@ -2,7 +2,7 @@ import time
 import sys
 import random
 
-item = ""
+item=[]
 
 
 
@@ -57,10 +57,9 @@ def response_flat2():
     if key_location == int(response):
         print_pause("You have found your keys")
         item.append("keys")
-        else:
-                print("There is no key")
-        else:
-            room1_response()
+    else:
+        print("There is no key")
+        response_flat2()
    
 
 
@@ -87,12 +86,12 @@ def location_bus_stop():
 
 def commit_crime():
     crime_chances = random.randint(1, 2)
-        if crime_chances == "1":
-            print_pause("You succesfully get away with this sin.")
-        else:
-            print_pause("You got caught!")
-            game_over()
-            quit()
+    if crime_chances == "1":
+        print_pause("You succesfully get away with this sin.")
+    else:
+        print_pause("You got caught!")
+        game_over()
+        quit()
 
 
 def response_bus_stop1():
@@ -121,10 +120,10 @@ def location_codecool():
     #game_over(),
     print_pause("3.) You don't care what does the receptionist says, you just go on straight.")
     #input here
-# A response: Találtál egy maszkot a kuka mögött
-# B response: Nem mehetsz haza, megsülsz az utcán, olyan meleg van
-# C response: A portás megelégelte a renitenskedést, és kiraktad a szűröd game_over()
-#Van maszk az inventoryban, tovább mehetsz az irodába
+    # A response: Találtál egy maszkot a kuka mögött
+    # B response: Nem mehetsz haza, megsülsz az utcán, olyan meleg van
+    # C response: A portás megelégelte a renitenskedést, és kiraktad a szűröd game_over()
+    #Van maszk az inventoryban, tovább mehetsz az irodába
 
 def location_office():
     print_pause("You stand in front of the door to your class,")
